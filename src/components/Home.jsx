@@ -7,7 +7,7 @@ function Home() {
 
   const handleGet = async () => {
     try {
-      const resp = await axios.get("http://localhost:3000/menu");
+      const resp = await axios.get("http://assignment-back-9w94.onrender.com/menu");
       console.log(resp.data);
       setMenu(resp.data);
       setMsg("Menu items loaded successfully!");

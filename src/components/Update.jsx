@@ -8,7 +8,7 @@ function Update() {
   const [msg, setMsg] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:3000/menu")
+    axios.get("http://assignment-back-9w94.onrender.com/menu")
       .then(res => setMenu(res.data))
       .catch(err => console.log(err));
   }, []);
@@ -24,7 +24,7 @@ function Update() {
     }
 
     try {
-      await axios.put(`http://localhost:3000/menu/${parseInt(selectedId)}`, item);
+      await axios.put(`http://assignment-back-9w94.onrender.com/menu/${parseInt(selectedId)}`, item);
       setMsg("Menu item updated successfully!");
       setSelectedId("");
       setItem({ name: "", category: "", price: "" });

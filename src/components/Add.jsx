@@ -8,7 +8,7 @@ function Add() {
 
   // Fetch menu to find last ID
   useEffect(() => {
-    axios.get("http://localhost:3000/menu")
+    axios.get("http://assignment-back-9w94.onrender.com/menu")
       .then(res => setMenu(res.data))
       .catch(err => console.log(err));
   }, []);
@@ -28,7 +28,7 @@ function Add() {
     const newId = menu.length > 0 ? Math.max(...menu.map(m => m.id)) + 1 : 1;
 
     try {
-      await axios.post("http://localhost:3000/menu", { id: newId, ...item });
+      await axios.post("http://assignment-back-9w94.onrender.com/menu", { id: newId, ...item });
       setMsg("Menu item added successfully!");
       setItem({ name: "", category: "", price: "" });
       setMenu([...menu, { id: newId, ...item }]);
