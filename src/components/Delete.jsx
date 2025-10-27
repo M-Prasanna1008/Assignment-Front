@@ -8,7 +8,7 @@ function Delete() {
 
   // Fetch existing menu items
   useEffect(() => {
-    axios.get("http://assignment-back-9w94.onrender.com/menu")
+    axios.get("https://assignment-back-9w94.onrender.com/menu")
       .then(res => setMenu(res.data))
       .catch(err => console.log(err));
   }, []);
@@ -20,7 +20,7 @@ function Delete() {
     }
 
     try {
-      await axios.delete(`http://assignment-back-9w94.onrender.com/menu/${parseInt(selectedId)}`);
+      await axios.delete(`https://assignment-back-9w94.onrender.com/menu/${parseInt(selectedId)}`);
       setMsg("Menu item deleted successfully!");
       setSelectedId("");
       // Update menu list after deletion
